@@ -1,40 +1,10 @@
 package com.developer.lab3_andoridnwk;
 
-
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
-import java.util.List;
-
-class Maths implements Serializable{
-
-    @SerializedName("q1")
-    @Expose
-    private Q1_ q1;
-    @SerializedName("q2")
-    @Expose
-    private Q2 q2;
-
-    public Q1_ getQ1() {
-        return q1;
-    }
-
-    public void setQ1(Q1_ q1) {
-        this.q1 = q1;
-    }
-
-    public Q2 getQ2() {
-        return q2;
-    }
-
-    public void setQ2(Q2 q2) {
-        this.q2 = q2;
-    }
-
-}
-
-class Q1 {
+ class Math {
 
     @SerializedName("question")
     @Expose
@@ -71,112 +41,35 @@ class Q1 {
     }
 
 }
-
-class Q1_ {
-
-    @SerializedName("question")
-    @Expose
-    private String question;
-    @SerializedName("options")
-    @Expose
-    private List<String> options = null;
-    @SerializedName("answer")
-    @Expose
-    private String answer;
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    public List<String> getOptions() {
-        return options;
-    }
-
-    public void setOptions(List<String> options) {
-        this.options = options;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
-
-}
-
-class Q2 {
-
-    @SerializedName("question")
-    @Expose
-    private String question;
-    @SerializedName("options")
-    @Expose
-    private List<String> options = null;
-    @SerializedName("answer")
-    @Expose
-    private String answer;
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    public List<String> getOptions() {
-        return options;
-    }
-
-    public void setOptions(List<String> options) {
-        this.options = options;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
-
-}
-
-class Quiz {
+ class Quiz {
 
     @SerializedName("sport")
     @Expose
-    private Sport sport;
+    private List<Sport> sport = null;
     @SerializedName("maths")
     @Expose
-    private Maths maths;
+    private List<Math> maths = null;
 
-    public Sport getSport() {
+    public List<Sport> getSport() {
         return sport;
     }
 
-    public void setSport(Sport sport) {
+    public void setSport(List<Sport> sport) {
         this.sport = sport;
     }
 
-    public Maths getMaths() {
+    public List<Math> getMaths() {
         return maths;
     }
 
-    public void setMaths(Maths maths) {
+    public void setMaths(List<Math> maths) {
         this.maths = maths;
     }
 
 }
 
 
-public class QuizModel implements Serializable {
+public class QuizModel {
 
     @SerializedName("quiz")
     @Expose
@@ -190,22 +83,41 @@ public class QuizModel implements Serializable {
         this.quiz = quiz;
     }
 
-    public QuizModel() {}
-
 }
+ class Sport {
 
-class Sport implements Serializable {
-
-    @SerializedName("q1")
+    @SerializedName("question")
     @Expose
-    private Q1 q1;
+    private String question;
+    @SerializedName("options")
+    @Expose
+    private List<String> options = null;
+    @SerializedName("answer")
+    @Expose
+    private String answer;
 
-    public Q1 getQ1() {
-        return q1;
+    public String getQuestion() {
+        return question;
     }
 
-    public void setQ1(Q1 q1) {
-        this.q1 = q1;
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public List<String> getOptions() {
+        return options;
+    }
+
+    public void setOptions(List<String> options) {
+        this.options = options;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
 }
